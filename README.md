@@ -8,6 +8,6 @@ The following are created in addition to the Databricks workspace:
     - A keyvault to store the app credentials
     - A storage account with the medallion architecture (represented with different containers)
 
-The repository also contains a databricks notebook to build an demo data pipeline 
+The repository also contains a databricks notebook to build a demo data pipeline 
 
 
