@@ -1,4 +1,4 @@
-# Azure Databricks Simple Deployment
+# Azure Databricks Simple Deployment #
 
 This repository contains code to create an Azure Databricks workspace with supporting infrastructure to allow the creation of ELT workflows. For a more detalied breakdown of how to code works and its implentation: [link]
 
