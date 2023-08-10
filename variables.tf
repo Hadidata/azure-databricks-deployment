@@ -6,17 +6,15 @@ variable "region" {
 
 variable "project" {
   type        = string
-  default     = "db2023"
   description = "Name of the project"
 }
 
 variable "enviroment" {
   type        = string
-  default     = "dev"
   description = "name of the enviroment"
 
   validation {
-    condition     = can(regex("dev|uat|prod", var.enviroment))
+    condition     = can(regex("sandbox|dev|uat|prod", var.enviroment))
     error_message = "Error: enviroment can only be dev, uat or prod"
   }
 }
