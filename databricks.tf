@@ -38,9 +38,11 @@ resource "databricks_cluster" "datalake-cluster" {
   depends_on = [databricks_secret_scope.datalake-scope, azurerm_key_vault_secret.datalake-secret]
 }
 
-resource "databricks_directory" "datalake-directory" {
-  path = "/Shared/pipelines"
 
-  depends_on = [azurerm_databricks_workspace.datalake-databricks]
+resource "databricks_notebook" "datalake-pipeline-example" {
+  source = "${path.module}/databricks_notbook/calgary_population_data_pipeline.dbc"
+  path   = "/Shared/pipelines/calgary_population"
 }
+
+
 

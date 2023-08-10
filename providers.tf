@@ -1,8 +1,7 @@
 provider "azurerm" {
   features {
     key_vault {
-      purge_soft_delete_on_destroy    = true
-      recover_soft_deleted_key_vaults = true
+      purge_soft_delete_on_destroy = true
     }
 
   }
@@ -12,7 +11,5 @@ provider "azurerm" {
 provider "databricks" {
   azure_workspace_resource_id = azurerm_databricks_workspace.datalake-databricks.id
   host                        = azurerm_databricks_workspace.datalake-databricks.workspace_url
-  auth_type                   = "azure-cli"
-
 }
 
