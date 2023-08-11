@@ -19,6 +19,15 @@ variable "enviroment" {
   }
 }
 
+variable "databricks_sku" {
+  type        = string
+  description = "Databricks workspace sku"
+  validation {
+    condition     = can(regex("premium|standard|trial", var.databricks_sku))
+    error_message = "Error: sku can only be standard, premium or trial"
+  }
+}
+
 variable "kv_scope_name" {
   type        = string
   default     = "abfs_read_write"
