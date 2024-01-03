@@ -2,7 +2,7 @@ resource "azurerm_databricks_workspace" "datalake-databricks" {
   name                = format("db-%s-%s", var.project, var.enviroment)
   resource_group_name = azurerm_resource_group.datalake-rg.name
   location            = azurerm_resource_group.datalake-rg.location
-  sku                 = "premium"
+  sku                 = var.databricks_sku
 }
 
 # create an Azure keyvault backed scope in databricks
